@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💘</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      width: 300px;
+    }
+
+    img {
+      width: 120px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #no {
+      background: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <img src="https://media.tenor.com/6Z8f3ZzZVvQAAAAi/minion-love.gif" alt="minion" />
+    <h1>Will you be my Valentine? 💖</h1>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">Yes</button>
+      <button id="no">No</button>
+    </div>
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yes");
+  const noBtn = document.getElementById("no");
+
+  let yesSize = 1;
+
+  noBtn.addEventListener("mouseover", () => {
+    yesSize += 0.2;
+    yesBtn.style.transform = `scale(${yesSize})`;
+
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 200 - 100;
+
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+
+  function yesClicked() {
+    document.body.innerHTML = `
+    <div style="
+      font-family: Arial, sans-serif;
+      background: #ffe6eb;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    ">
+      <h1 style="color:#ff4d6d; margin-bottom: 20px;">
+        You’re officially my Valentine 💘
+      </h1>
+
+      <img 
+        src="https://nordictrustee.com/app/uploads/2024/08/Anders-Nordic-Trustee-24-08-26-OivindHaug-1168_web-460x613.jpg"
+        alt="Me"
+        style="
+          width: 200px;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+          margin-bottom: 20px;
+        "
+      />
+
+      <p style="font-size: 18px;">
+        Lucky you 😉
+      </p>
+    </div>
+  `;
+  }
+  </script>
+
+</body>
+</html>
